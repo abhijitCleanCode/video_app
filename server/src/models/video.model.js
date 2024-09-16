@@ -1,4 +1,5 @@
 import mongoose, { Schema } from "mongoose";
+import mongoosePaginate from "mongoose-paginate-v2";
 
 const videoSchema = new Schema({
     videoFile: {
@@ -27,7 +28,30 @@ const videoSchema = new Schema({
     views: {
         type: Number,
         default: 0,
-    }
+    },
+    likes: {
+        type: Number,
+        default: 0,
+    },
+    dislikes: {
+        type: Number,
+        default: 0,
+    },
+    visibility: {
+        type: String,
+        enum: ["public", "private"],
+        default: "public",
+    },
+    tags: {
+        type: [String], // Array of tags to enhance search, filtering and data
+    },
+    comments: [{
+        type: Schema.Types.ObjectId,
+        ref: "Comment", // Reference to Comment model
+    }]
 }, { timestamps: true })
+
+videoSchema.plugin(mongoosePaginate);
+videoSchema.index({ title: 'text', description: 'text' });
 
 export const Video = mongoose.model("Video", videoSchema);
