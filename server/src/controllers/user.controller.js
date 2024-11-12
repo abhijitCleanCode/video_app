@@ -42,7 +42,7 @@ const registerUser = asyncHandler( async (request, response) => {
     })
 
     if(existedUser)
-        throw new ApiError(409, "User with same email or usernam already exist")
+        throw new ApiError(409, "User with same email or username already exist")
 
     console.log(request.files);
 

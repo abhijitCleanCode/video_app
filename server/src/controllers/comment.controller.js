@@ -9,7 +9,7 @@ const getAllCommentsOnVideo = asyncHandler(async (request, response) => {
 })
 
 const createComment = asyncHandler(async (request, response) => {
-
+    
 })
 
 const deleteComment = asyncHandler(async (request, response) => {
@@ -19,7 +19,6 @@ const deleteComment = asyncHandler(async (request, response) => {
 const updateComment = asyncHandler(async (request, response) => {
 
 })
-
 
 export {
     getAllCommentsOnVideo,

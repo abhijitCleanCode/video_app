@@ -19,6 +19,14 @@ const userSchema = new Schema({
         type: String,
         required: [true, "email is required in user schema"],
         unique: [true, "email must be unique"],
+        validate: {
+            validator: function (email) {
+                // Regular expression for basic email format validation
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return emailRegex.test(email); // Return true if matched, otherwise false
+            },
+            message: props => `${props.value} is not a valid email address!`
+        }
     },
     password: {
         type: String,
@@ -50,7 +58,7 @@ userSchema.pre("save", async function () {
     next();
 })
 
-userSchema.methods.isPasswordCorrect = async function(password) {
+userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password);
 }
 
@@ -61,22 +69,22 @@ userSchema.methods.generateAccessToken = function () {
         username: this.username,
         fullName: this.fullName
     },
-    process.env.ACCESS_TOKEN_SECRET,
-    {
-        expiresIn: process.env.ACCESS_TOKEN_EXPIRY
-    }
-)
+        process.env.ACCESS_TOKEN_SECRET,
+        {
+            expiresIn: process.env.ACCESS_TOKEN_EXPIRY
+        }
+    )
 }
 
 userSchema.methods.generateRefreshToken = function () {
     return jwt.sign({
         _id: this._id,
     },
-    process.env.REFRESH_TOKEN_SECRET,
-    {
-        expiresIn: process.env.REFRESH_TOKEN_EXPIRY
-    }
-)
+        process.env.REFRESH_TOKEN_SECRET,
+        {
+            expiresIn: process.env.REFRESH_TOKEN_EXPIRY
+        }
+    )
 }
 
 export const User = mongoose.model("User", userSchema);
