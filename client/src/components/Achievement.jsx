@@ -13,8 +13,8 @@ import { cardProfile } from "../assets";
 
 const AchievementCard = ({ index }) => {
   return (
-    <div className="max-w-xl rounded-[32]">
-      <Card className="card-shadow rounded-[32px] bg-transparent fill-[#282828]/70 stroke-white/40 stroke-1 p-10">
+    <div className="w-full rounded-[32]">
+      <Card className="rounded-[32px] bg-white/70 fill-[#282828]/70 stroke-white/40 stroke-1 p-10 shadow-md">
         <CardHeader>
           <p className="text-n-3">
             Jee mains percentile 98.28 | HS 10th Rank Holder | Maths score 100.
@@ -58,7 +58,7 @@ const Achievement = () => {
               centerMode: true,
               centerPadding: "0px",
             }}
-            className="z-10 h-96 max-h-[500px] max-w-2xl"
+            className="z-10 h-96 max-h-[500px] max-w-4xl"
           >
             <CarouselContent>
               {Array.from({ length: 5 }).map((_, index) => (

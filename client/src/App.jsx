@@ -1,6 +1,13 @@
 import React from "react";
 
-import { Achievement, Features, Hero, Navbar, Services } from "./components";
+import {
+  Achievement,
+  Features,
+  Hero,
+  Navbar,
+  Services,
+  Testimonial,
+} from "./components";
 
 const App = () => {
   return (
@@ -10,6 +17,7 @@ const App = () => {
       <Achievement />
       <Features />
       <Services />
+      <Testimonial />
     </div>
   );
 };

@@ -44,7 +44,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <div className="z-20 mx-auto mb-10 grid grid-cols-2 gap-4 divide-x divide-solid divide-n-2/10 rounded-[1.75rem] bg-n-3 px-6 py-3 md:w-[50rem] md:grid-cols-4">
+        <div className="z-20 mx-auto mb-10 grid grid-cols-2 gap-4 divide-x divide-dashed divide-n-1 rounded-[1.75rem] bg-n-3 px-6 py-3 md:w-[50rem] md:grid-cols-4">
           {banner.map((item, index) => (
             <div
               key={index}

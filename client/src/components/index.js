@@ -5,6 +5,7 @@ import Tagline from "./Tagline";
 import Achievement from "./Achievement";
 import Features from "./Features";
 import Services from "./Services";
+import Testimonial from "./Testimonial";
 
 // pages
 import Hero from "./Hero";
@@ -18,4 +19,5 @@ export {
   Achievement,
   Features,
   Services,
+  Testimonial,
 };

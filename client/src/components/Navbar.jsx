@@ -33,32 +33,33 @@ const PingDot = () => (
 const Navbar = () => {
   return (
     <div className={`absolute left-0 top-0 z-50 w-full`}>
-      <div className="lg:px-7.5 flex items-center px-5 max-lg:py-4 xl:px-10">
-        <Link to="/" className="block w-[5rem] xl:mr-8">
-          <img src={aries_tech_logo} alt="logo" />
-        </Link>
-
-        <nav className="fixed bottom-0 left-0 right-0 top-0 lg:static lg:mx-auto lg:flex">
-          <div className="z-2 relative m-auto flex items-center justify-center gap-[20px] rounded-full border-[1.5px] border-white/15 bg-n-2 px-[32px] py-[16px] shadow-inner backdrop-blur-[100px] lg:flex-row">
+      <div className="lg:px-7.5 flex items-center justify-between px-5 max-lg:py-4 xl:px-10">
+        <div className="flex items-center gap-[10px] divide-x divide-solid divide-n-2">
+          <Link to="/" className="block w-[8rem] xl:mr-8">
+            <img src={aries_tech_logo} alt="logo" />
+          </Link>
+          <nav className="hidden items-center justify-center gap-[20px] px-6 lg:flex">
             {navLinks.map((item) => (
               <Link
                 to={item.path}
                 key={item.name}
-                className="font-code text-sm font-medium text-n-6"
+                className="font-code text-base font-medium text-n-1/70 hover:text-n-1"
               >
                 {item.name}
               </Link>
             ))}
-          </div>
-        </nav>
+          </nav>
+        </div>
 
-        <Link className="button mr-8 hidden text-n-1 lg:block">Log in</Link>
-        <Button className="hidden lg:flex" white={true} onClick={() => {}}>
-          <span className="flex items-center gap-2">
-            <PingDot />
-            Demo
-          </span>
-        </Button>
+        <div className="flex items-center gap-2">
+          <Link className="button mr-8 hidden text-n-1 lg:block">Log in</Link>
+          <Button className="hidden lg:flex" white={true} onClick={() => {}}>
+            <span className="flex items-center gap-2">
+              <PingDot />
+              Demo
+            </span>
+          </Button>
+        </div>
       </div>
     </div>
   );

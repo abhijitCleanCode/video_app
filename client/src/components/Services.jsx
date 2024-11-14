@@ -14,54 +14,70 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { expertFaculty, individualAttention, liveClasses } from "../assets";
 
 const AvailableServices = [
   {
+    iconUrl: liveClasses,
     title: "Live Classes",
     description:
       "Live classes are available for all students to study from their home. The classes are recorded and you can watch them whenever you want.",
   },
   {
+    iconUrl: expertFaculty,
     title: "Mock Tests",
     description:
       "Mock tests are available for all students to practice their concepts. The tests are recorded and you can watch them whenever you want.",
   },
   {
+    iconUrl: expertFaculty,
     title: "Expert Faculty",
     description:
       "Highly qualified and experienced teachers dedicated to your success.",
   },
   {
+    iconUrl: individualAttention,
     title: "Individualized Attention",
     description: "Personalized attention and guidance for each student.",
   },
   {
+    iconUrl: expertFaculty,
     title: "Expert Faculty",
     description:
       "Highly qualified and experienced teachers dedicated to your success.",
   },
   {
+    iconUrl: individualAttention,
     title: "Individualized Attention",
     description: "Personalized attention and guidance for each student.",
   },
   {
+    iconUrl: expertFaculty,
     title: "Expert Faculty",
     description:
       "Highly qualified and experienced teachers dedicated to your success.",
   },
   {
+    iconUrl: individualAttention,
     title: "Individualized Attention",
     description: "Personalized attention and guidance for each student.",
   },
 ];
 const ServicesCard = ({ item }) => {
   return (
-    <Card className="h-[200px] w-[350px]">
-      <CardHeader className="mx-auto flex flex-col space-y-2">
-        <CardTitle className="h5 text-center font-sans font-medium text-n-1">
+    <Card className="h-[250px] w-[350px] bg-n-2">
+      <CardHeader className="mx-auto flex flex-col text-center">
+        <CardTitle className="h5 mb-[16px] space-y-2 font-sans font-medium text-n-6">
+          <img
+            src={item.iconUrl}
+            width={55}
+            height={55}
+            alt={item.title}
+            className="mx-auto"
+          />
           {item.title}
         </CardTitle>
-        <CardDescription className="body-2 text-n-4">
+        <CardDescription className="body-2 text-n-7">
           {item.description}
         </CardDescription>
       </CardHeader>
@@ -79,7 +95,7 @@ const Services = () => {
           <h2 className="h2 text-center font-code font-medium text-n-1">
             What do Students Get?
           </h2>
-          <p className="body-2 text-center text-n-4">
+          <p className="body-2 py-[8px] text-center text-n-4">
             GMB got you covered. Just scroll to find the one you are looking
             for.
           </p>
@@ -105,7 +121,7 @@ const Services = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <div className="absolute left-1/2 right-1/2 top-[60%] flex items-center justify-center">
+            <div className="absolute left-1/2 right-1/2 top-[70%] flex items-center justify-center">
               <CarouselPrevious className="inner-shadow" />
               <CarouselNext className="inner-shadow" />
             </div>

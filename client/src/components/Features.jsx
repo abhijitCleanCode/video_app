@@ -1,7 +1,6 @@
 import React from "react";
 
 import { features } from "../constants";
-import { Button } from ".";
 
 const Features = () => {
   return (
@@ -9,7 +8,7 @@ const Features = () => {
       <div className="lg:px-15 z-2 relative mx-auto max-w-[77.5rem] px-5 md:px-10 xl:max-w-[87.5rem]">
         <div className="mx-auto mb-10">
           <h2 className="h2 text-center font-code font-medium text-n-1">
-            What are you preparing for?
+            Academic Courses.
           </h2>
           <p className="body-2 text-center text-n-4">
             GMB got you covered. Just scroll to find the one you are looking
@@ -43,7 +42,6 @@ const Features = () => {
               </div>
             </div>
           ))}
-          <Button white={true}>View all</Button>
         </div>
       </div>
     </section>
